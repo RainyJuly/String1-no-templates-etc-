@@ -30,12 +30,12 @@ public:
 	{
 		return _str;
 	};
-	char& operator[](unsigned index)
+	char& operator[](unsigned index)//доступ по индексу
 	{
 		if ((index > _size - 1) || (index < 0) || (_size == 0))throw "Incorrect index!";
 		return _str[index];
 	};
-	string operator+(const string& rhs)
+	string operator+(const string& rhs)//конкатенация или сложение двух строк
 	{
 		string _tmp("");
         delete[] _tmp._str;
@@ -54,7 +54,7 @@ public:
 		_tmp._str[_tmp._size] = 0;
 		return _tmp;
 	};
-	string operator*(const unsigned n)
+	string operator*(const unsigned n)//повторение строки или умножение
 	{
 		string _tmp("");
 		delete[] _tmp._str;
@@ -70,7 +70,7 @@ public:
 		_tmp._str[_size * n] = 0;
 		return _tmp;
 	};
-	string GetSubstring(unsigned index, unsigned size, const string& rhs)
+	string GetSubstring(unsigned index, unsigned size, const string& rhs)//подстрока
 	{
 		string _tmp;
 		delete _tmp._str;
@@ -97,7 +97,7 @@ public:
 		return os;
 	};
 };
-char* newstroke()
+char* newstring()//новая строка
 {
 	char str[100];
 	gets_s(str);
@@ -357,11 +357,11 @@ int main()
 				{
 				case 49:
 					std::cout << "Your string:";
-					A = newstroke();
+					A = newstring();
 					break;
 				case 50:
 					std::cout << "Your string:";
-					B = newstroke();
+					B = newstring();
 					break;
 				}
 			}
